@@ -1,0 +1,36 @@
+html {
+background: url('bar.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h1 {
+	font-size: 40px;
+	text-align:center;
+	color: blue;
+	text-shadow: 1px 1px white;
+}
+
+p {
+	color: black;
+	text-shadow: none;
+	text-align: center;
+	font-size: 30px;
+}
+
+.questions, .answers, .detail{
+	text-align:center;
+	font-size: 30px;
+	color: white;
+	text-shadow: 2px 2px black;
+}
+
+.new-drink {
+	margin: 0 auto;
+	display: block;
+}
+
+
+
