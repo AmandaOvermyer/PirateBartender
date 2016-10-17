@@ -1,6 +1,7 @@
-function Question(qText, category){
-	this.question = qText;
-	this.category = category;
+class Question{
+	constructor (qText, category){
+		this.question = qText;
+		this.category = category;
+	}
 }
-
-module.exports = Question;
+export default Question;

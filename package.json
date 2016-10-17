@@ -4,7 +4,8 @@
   "description": "",
   "main": "classes.js",
   "scripts": {
-    "webpack": "webpack --watch"
+    "webpack:watch": "webpack --watch",
+    "webpack": "webpack"
   },
   "repository": {
     "type": "git",

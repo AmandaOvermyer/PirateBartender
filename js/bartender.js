@@ -1,44 +1,47 @@
-var Drink = require('./Drink');
+import Drink from './Drink';
 
-function Bartender(questions){
-	this.questions = questions;
-	this.currentQuestion = 0;
-}
-
-Bartender.prototype.askQuestion = function(){
+class Bartender{
+	constructor (questions){
+		this.questions = questions;
+		this.currentQuestion = 0;
+	}
+	askQuestion(){
 	//return this.questions[0];
-	return this.questions[this.currentQuestion];
+		return this.questions[this.currentQuestion];
 
-}
+	}
 
-Bartender.prototype.makeDrink = function(userPreferences, pantry){
-	var ingredients = [];
-	for (var i = 0; i < userPreferences.categories.length; i++) {
-		randomNumber = Math.floor(Math.random() * 4);
-		var category = userPreferences.categories[i];
-		ingredients.push(pantry.getRandomIngredient(category));
-		
+	makeDrink(userPreferences, pantry){
+		let ingredients = [];
+		for (let i = 0; i < userPreferences.categories.length; i++) {
+			const randomNumber = Math.floor(Math.random() * 4);
+			const category = userPreferences.categories[i];
+			ingredients.push(pantry.getRandomIngredient(category));
+			
+			
+		}
+		return new Drink(ingredients);
 		
 	}
-	return new Drink(ingredients);
-	
+
+
+	nextQuestion() {
+		this.currentQuestion++;
+	}
+
+	nameDrink() {
+		const randomNumber = Math.floor(Math.random() * drinkName1.length);
+		return drinkName1[randomNumber] + " " + drinkName2[randomNumber];
+	}
+
+	reset(){
+		this.currentQuestion = 0;
+	}
 }
 
 
-Bartender.prototype.nextQuestion = function() {
-	this.currentQuestion++;
-}
 
-Bartender.prototype.nameDrink = function() {
-	randomNumber = Math.floor(Math.random() * drinkName1.length);
-	return drinkName1[randomNumber] + " " + drinkName2[randomNumber];
-}
-
-Bartender.prototype.reset = function(){
-	this.currentQuestion = 0;
-}
-
-var drinkName1 = [
+const drinkName1 = [
 'Crazy',
 'Fluffy',
 'Good',
@@ -55,7 +58,7 @@ var drinkName1 = [
 'Tasty',
 'Tiny'
 ];
-var drinkName2 = [
+const drinkName2 = [
 'Bunny',
 'Glitter',
 'Cookie',
@@ -73,4 +76,4 @@ var drinkName2 = [
 'Butter'
 ];
 
-module.exports = Bartender;
+export default Bartender;

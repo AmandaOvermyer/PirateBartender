@@ -1,6 +1,9 @@
-function Ingredient(name, category){
-	this.name = name;
-	this.category = category;
-}  
+class Ingredient{
+	constructor(name, category){
+		this.name = name;
+		this.category = category;
+	}
+}
 
-module.exports = Ingredient;
+export default Ingredient;
+

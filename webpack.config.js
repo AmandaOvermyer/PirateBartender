@@ -10,6 +10,7 @@ module.exports = {
 		path: path.resolve(__dirname, 'build'),
 		filename: output,
 	},
+  
 	module: {
       loaders: [
         {

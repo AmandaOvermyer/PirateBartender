@@ -1,11 +1,11 @@
-var Ingredient = require('./Ingredient');
-var UserPreferences = require('./UserPreferences');
-var Pantry = require('./Pantry');
-var Bartender = require('./Bartender');
+import Ingredient from './Ingredient';
+import UserPreferences from './UserPreferences';
+import Pantry from './Pantry';
+import Bartender from './Bartender';
 
-var Question = require('./Question');
+import Question from './Question';
 
-var pantry = new Pantry([
+const pantry = new Pantry([
 	new Ingredient("Glug of rum","strong"),
 	new Ingredient("Slug of Whiskey", "strong"),
 	new Ingredient("splash of gin", "strong"),
@@ -23,7 +23,8 @@ var pantry = new Pantry([
 	new Ingredient("cherry on top", "fruity")
 	])
 
-var bartender = new Bartender([
+
+const bartender = new Bartender([
 	new Question("Salty?", 'salty'),
 	new Question("Do ye like yer drinks strong?", 'strong'),
 	new Question("Are ye a lubber who likes it bitter?", 'bitter'),
@@ -33,8 +34,8 @@ var bartender = new Bartender([
 
 
 
-var userPreference = new UserPreferences()
-var q = bartender.askQuestion();
+let userPreference = new UserPreferences()
+let q = bartender.askQuestion();
 
 function showQuestion(q){
 	$('.questions').text(q.question);
@@ -42,7 +43,7 @@ function showQuestion(q){
 function showDrink(drink, name){
 	$('.drink').append('<p class="detail"> Enjoy this drink called: ' + name + '</p>');
 	$('.drink').append('<p> It is made with: </p>');
-	for (var i = 0; i < drink.ingredients.length; i++){
+	for (let i = 0; i < drink.ingredients.length; i++){
 		$('.drink').append("<p>" + drink.ingredients[i] + "</p>");
 	}
 	
@@ -63,8 +64,8 @@ $('.answers').on('click', 'input[name=answer]', function(){
 	if (q) {
 		showQuestion(q);
 	} else {
-		var drink = bartender.makeDrink(userPreference, pantry);
-		var drinkname = bartender.nameDrink();
+		const drink = bartender.makeDrink(userPreference, pantry);
+		const drinkname = bartender.nameDrink();
 		showDrink(drink, drinkname);
 		$('.questions').hide();
 		$('.answers').hide();

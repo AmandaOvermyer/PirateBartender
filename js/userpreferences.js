@@ -1,9 +1,12 @@
-function UserPreferences(){
-	this.categories = [];
+class UserPreferences{
+	constructor() {
+		this.categories = [];
+	}
+	addCategory(category){
+		this.categories.push(category);
+	}
 }
 
-UserPreferences.prototype.addCategory = function(category){
-	this.categories.push(category);
-}
 
-module.exports = UserPreferences;
+
+export default UserPreferences;

@@ -1,5 +1,6 @@
-function Drink(ingredients){
-	this.ingredients = ingredients;
+class Drink{
+	constructor(ingredients){
+		this.ingredients = ingredients;
+	}
 }
-
-module.exports = Drink;
+export default Drink;
